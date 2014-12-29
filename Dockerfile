@@ -6,7 +6,7 @@ RUN apt-get update -q
 RUN apt-get install -qy nginx ruby2.2 ruby2.2-dev nodejs sqlite3 libsqlite3-dev zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt1-dev lib    curl4-openssl-dev git-core curl libpq-dev
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
-ADD nginx.unicorn.conf /etc/nginx/sites-enabled/default
+ADD https://raw.githubusercontent.com/emachnic/base_rails/master/nginx.unicorn.conf /etc/nginx/sites-enabled/default
 RUN mkdir -p /usr/src/app/tmp/pids
 RUN mkdir -p /usr/src/app/tmp/sockets
 RUN mkdir -p /usr/src/app/log
